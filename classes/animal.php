@@ -11,20 +11,46 @@ class Animal {
         $this->species = $species;
     }
 
-    public function sayMyName(){
+    public function sayMyName(): String{
         return $this->name;
+    }
+
+    public function noise(): string{
+        return "I am a generic class, I dont have noise!!!!";
     }
 }
 
 class Lion extends Animal{
-    public function __construct(string $name, int $age, string $species = "lion"){
+    public function __construct(string $name, int $age){
         $this->name = $name;
         $this->age = $age;
         $this->species = "lion";
     }
+
+    public function noise(): string{
+        return "Roooooooar!!!!";       
+    }
 }
 
 
-$lion = new Lion("Simba", 10, "lion");
-echo $lion->sayMyName() . PHP_EOL;
-echo get_debug_type($lion) . PHP_EOL;
+class Tiger extends Animal{
+    public function __construct(string $name, int $age, string $species = "tiger"){
+        $this->name = $name;
+        $this->age = $age;
+        $this->species = $species;  
+    }
+
+    public function noise(): string{
+        return "MIAAAAAAAAAU!!!!";
+    }
+}
+
+
+$lion = new Lion("Simba", 10);
+$tiger = new Tiger("Drogo", 8);
+
+$animals = [$lion, $tiger];
+
+foreach ($animals as $animal) {
+    echo "Name: " . $animal->name . " Species: " . $animal->species . " Age: " . $animal->age . " Noise: " . $animal->noise() . PHP_EOL;
+}
