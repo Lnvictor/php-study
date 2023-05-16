@@ -38,8 +38,7 @@ function constructTeams($team){ global $teams;
 
 function drawTeams($teams){
     // echo($teams);
-   foreach ($teams as $index => $player) {
-        $position = $player->position;
+   foreach ($teams as $position => $player) {
         return "<span class=\"dot $position\"></span>";
    } 
 }
