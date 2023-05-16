@@ -1,0 +1,15 @@
+.field{
+    border-color: black;
+    border: 25px;
+    border-style: solid;
+    height: 620px;
+    width: 1000px;
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
